@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "cdPmmcaHcCd8edAOtbPBHw2uVu6OWkbAd0RAKG1BmC+qx1QtFT6Auy2owQic39Tw9qMK0Qlczhx75dHvcnbT/g==",
+  "success": true,
+  "projectFilePath": "/mnt/c/Users/frmau/estudo/dotnet/grpc/clientProductApiGrpc/GrpcClient/GrpcClient.csproj",
+  "expectedPackageFiles": [
+    "/home/ubunto/.nuget/packages/google.protobuf/3.15.8/google.protobuf.3.15.8.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/grpc.core.api/2.37.0/grpc.core.api.2.37.0.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/grpc.net.client/2.37.0/grpc.net.client.2.37.0.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/grpc.net.common/2.37.0/grpc.net.common.2.37.0.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/grpc.tools/2.37.1/grpc.tools.2.37.1.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.3/microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
+    "/home/ubunto/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.2/system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}
