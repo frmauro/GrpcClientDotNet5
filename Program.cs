@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 using Grpc.Net.Client;
 using Grpc.Core;
 using SalesProductApi;
@@ -22,10 +24,20 @@ namespace GrpcClient
             // Console.WriteLine("Response Product: " + reply);
             // Console.WriteLine("Press any key to exit...");            
 
-            var reply = await client.GetProductAsync(new SalesProductApi.ProductId { Id = 1 });
+            // var reply = await client.GetProductAsync(new SalesProductApi.ProductId { Id = 1 });
+            // Console.WriteLine("Response Product: " + reply);
+            // Console.WriteLine("Press any key to exit...");            
+
+            var item = new  SalesProductApi.ItemUpdateAmount();
+            var items = new List<SalesProductApi.UpdateAmountRequest>();
+            var request = new SalesProductApi.UpdateAmountRequest();
+                request.Id = 1;
+                request.Amount = "200";
+                items.Add(request);
+            item.Items.AddRange(items);
+            var reply = await client.UpdateAmountAsync(item);
             Console.WriteLine("Response Product: " + reply);
             Console.WriteLine("Press any key to exit...");            
-
 
             //Console.WriteLine("Hello World!");
         }
