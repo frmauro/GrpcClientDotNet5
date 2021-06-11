@@ -47,6 +47,10 @@ namespace SalesProductApi {
 
     static readonly grpc::Marshaller<global::SalesProductApi.ProductRequest> __Marshaller_SalesProductApi_ProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SalesProductApi.ProductRequest.Parser));
     static readonly grpc::Marshaller<global::SalesProductApi.ProductReply> __Marshaller_SalesProductApi_ProductReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SalesProductApi.ProductReply.Parser));
+    static readonly grpc::Marshaller<global::SalesProductApi.Empty> __Marshaller_SalesProductApi_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SalesProductApi.Empty.Parser));
+    static readonly grpc::Marshaller<global::SalesProductApi.ItemResponse> __Marshaller_SalesProductApi_ItemResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SalesProductApi.ItemResponse.Parser));
+    static readonly grpc::Marshaller<global::SalesProductApi.ProductId> __Marshaller_SalesProductApi_ProductId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SalesProductApi.ProductId.Parser));
+    static readonly grpc::Marshaller<global::SalesProductApi.ProductResponse> __Marshaller_SalesProductApi_ProductResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SalesProductApi.ProductResponse.Parser));
 
     static readonly grpc::Method<global::SalesProductApi.ProductRequest, global::SalesProductApi.ProductReply> __Method_SendProduct = new grpc::Method<global::SalesProductApi.ProductRequest, global::SalesProductApi.ProductReply>(
         grpc::MethodType.Unary,
@@ -54,6 +58,20 @@ namespace SalesProductApi {
         "SendProduct",
         __Marshaller_SalesProductApi_ProductRequest,
         __Marshaller_SalesProductApi_ProductReply);
+
+    static readonly grpc::Method<global::SalesProductApi.Empty, global::SalesProductApi.ItemResponse> __Method_GetProducts = new grpc::Method<global::SalesProductApi.Empty, global::SalesProductApi.ItemResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetProducts",
+        __Marshaller_SalesProductApi_Empty,
+        __Marshaller_SalesProductApi_ItemResponse);
+
+    static readonly grpc::Method<global::SalesProductApi.ProductId, global::SalesProductApi.ProductResponse> __Method_GetProduct = new grpc::Method<global::SalesProductApi.ProductId, global::SalesProductApi.ProductResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetProduct",
+        __Marshaller_SalesProductApi_ProductId,
+        __Marshaller_SalesProductApi_ProductResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -127,6 +145,94 @@ namespace SalesProductApi {
       public virtual grpc::AsyncUnaryCall<global::SalesProductApi.ProductReply> SendProductAsync(global::SalesProductApi.ProductRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendProduct, null, options, request);
+      }
+      /// <summary>
+      /// get all products
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::SalesProductApi.ItemResponse GetProducts(global::SalesProductApi.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetProducts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// get all products
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::SalesProductApi.ItemResponse GetProducts(global::SalesProductApi.Empty request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetProducts, null, options, request);
+      }
+      /// <summary>
+      /// get all products
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::SalesProductApi.ItemResponse> GetProductsAsync(global::SalesProductApi.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetProductsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// get all products
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::SalesProductApi.ItemResponse> GetProductsAsync(global::SalesProductApi.Empty request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetProducts, null, options, request);
+      }
+      /// <summary>
+      /// get product by id
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::SalesProductApi.ProductResponse GetProduct(global::SalesProductApi.ProductId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetProduct(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// get product by id
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::SalesProductApi.ProductResponse GetProduct(global::SalesProductApi.ProductId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetProduct, null, options, request);
+      }
+      /// <summary>
+      /// get product by id
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::SalesProductApi.ProductResponse> GetProductAsync(global::SalesProductApi.ProductId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetProductAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// get product by id
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::SalesProductApi.ProductResponse> GetProductAsync(global::SalesProductApi.ProductId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetProduct, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override ProductServiceProtoClient NewInstance(ClientBaseConfiguration configuration)
